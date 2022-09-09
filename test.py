@@ -1,7 +1,20 @@
+from asyncio.windows_events import NULL
 import cv2 as cv
 
-img = cv.imread('C:/Users/tusha/Pictures/mug.jpg')
+def GrabVideo():
+    return cv.VideoCapture('C:/Users/tusha/Videos/3d character.mp4')
 
-cv.imshow('MUG', img)
+capture = GrabVideo()
 
-cv.waitKey(0)
+while True:
+    isTrue, frame = capture.read()
+    if (isTrue):
+        cv.imshow('Video', frame)
+
+        if cv.waitKey(1) & 0xFF == ord('d'):
+            break
+    else:
+        capture = GrabVideo()
+
+capture.release()
+cv.destroyAllWindows()
