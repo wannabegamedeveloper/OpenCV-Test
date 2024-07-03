@@ -15,9 +15,6 @@ def GrabVideo():
     return cv.VideoCapture('C:/Users/tusha/Videos/3d character.mp4')
 
 
-
-capture = GrabVideo()
-
 while True:
     isTrue, frame = capture.read()
     if (isTrue):
