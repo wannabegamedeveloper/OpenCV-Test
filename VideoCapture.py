@@ -9,11 +9,10 @@ def GaussianBlur(frame):
 def CannyEdges(frame):
     return cv.Canny(frame, 125, 180)
 
-
-
 def GrabVideo():
     return cv.VideoCapture('C:/Users/tusha/Videos/3d character.mp4')
 
+capture = GrabVideo()
 
 while True:
     isTrue, frame = capture.read()
@@ -28,4 +27,3 @@ while True:
 
 capture.release()
 cv.destroyAllWindows()
-
